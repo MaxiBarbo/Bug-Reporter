@@ -1,0 +1,91 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    background-color: #1A181B;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    color: white;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.back{
+    width: 18rem;
+    height: 5rem;
+    background-color: rgba(175, 170, 170, 0.534);
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid black;
+    
+}
+
+.data1{
+    display: flex;
+    width: 25rem;
+    height: 5rem;
+    border: 2px solid black
+}
+
+.data2{
+    display: flex;
+    width: 50rem;
+    height: 5rem;
+    
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.divColumn{
+    display: flex;
+    flex-direction: column;
+    width: 44rem;
+   
+}
+
+label{
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    margin-left: 3px;
+}
+
+.label1{
+    font-size: 1.5em;
+}
+
+input{
+    width: 44rem;
+}
+
+select{
+    width: 44rem;
+}
+
+textarea{
+    width: 44rem;
+}
+
+.reportBtn{
+    width: 44rem;
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 375px) {
+    body{
+        justify-content: center;
+        background-color: antiquewhite;
+    }   
+}

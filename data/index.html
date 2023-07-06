@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Reporte de Bugs</title>
+  </head>
+  <body>
+    <h1>Reporte de Bugs</h1>
+    <form id="myForm">
+
+    <div class="block">    
+        <div class="back">  
+            <label for="fecha">Fecha:</label>
+        </div>   
+        <did class="data1">
+            <input type="date" id="fecha" name="fecha">
+        </did>
+    </div>
+
+    <div class="block">    
+        <div class="back">  
+            <label for="name">ID:</label>
+        </div>   
+        <did class="data1">
+            <input type="text" id="identificador" name="name">
+        </did>
+    </div>
+
+    <div class="block">    
+        <div class="back">  
+            <label for="titulo">Titulo:</label>
+        </div>   
+        <did class="data1">
+            <input type="text" id="titulo" name="titulo">
+        </did>
+    </div>
+
+    <div class="block">    
+        <div class="back">  
+            <label for="tipo">Tipo de Defecto:</label>
+        </div>   
+        <did class="data1">
+            <select name="tipo">
+                <option></option>
+                <option value="Contenido">Contenido</option>
+                <option value="Crash">Crash</option>
+                <option value="Funcional">Funcional</option>
+                <option value="Performance">Performance</option>
+                <option value="Visual">Visual</option>
+              </select>
+        </did>
+    </div>
+
+    <div class="block">    
+        <div class="back">  
+            <label for="frecuencia">Frecuencia</label>
+        </div>   
+        <did class="data1">
+            <select name="frecuencia">
+                <option></option>
+                <option value="Siempre">Siempre</option>
+                <option value="A veces">A veces</option>
+              </select>
+        </did>
+    </div>
+
+    <div class="block">    
+        <div class="back">  
+            <label for="prioridad">Prioridad:</label>
+        </div>   
+        <did class="data1">
+            <select name="prioridad">
+                <option></option>
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+              </select>
+        </did>
+    </div>   
+
+    <div class="block">    
+        <div class="back">  
+            <label for="dispositivo">Dispositivo / Navegador:</label>
+        </div>   
+        <did class="data1">
+            <select name="dispositivo">
+                <option></option>
+                <option value="Chrome">Chrome</option>
+                <option value="Firefox">Firefox</option>
+                <option value="Opera">Opera</option>
+              </select>
+        </did>
+    </div>  
+
+
+    <div class="divColumn"> 
+      <label class="label1" for="pasos">Pasos de Ejecucion:</label>
+      <textarea name="pasos" rows="10" cols="30" placeholder="1.Open URL: www.example.com" maxlength="200"></textarea>
+    </div>  
+
+    <div class="divColumn"> 
+      <label class="label1" for="esperado">Resultado Esperado:</label>
+        <did class="data2">
+            <input type="text" id="esperado" name="esperado">
+        </did>
+    </div> 
+
+    <div class="divColumn"> 
+        <label class="label1" for="actual">Resultado Actual:</label>
+          <did class="data2">
+            <input type="text" id="actual" name="actual">
+          </did>
+      </div> 
+
+      <!-- <label for="fileUpload">Selecciona un archivo:</label>
+      <input type="file" id="imagen" accept="image/*">
+      <div id="mostrarImagen" stye="display:flex;"></div> -->
+
+      <input class="reportBtn btn btn-outline-danger" type="submit" value="Generar Reporte">
+    </form>
+  </body>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- <script src="imagen.js"></script> -->
+</html>
