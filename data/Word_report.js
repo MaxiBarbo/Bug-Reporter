@@ -9,12 +9,11 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
     let frecuencia = document.querySelector('select[name="frecuencia"]').value;
     let prioridad = document.querySelector('select[name="prioridad"]').value;
     let dispositivo = document.querySelector('select[name="dispositivo"]').value;
+    let navegador = document.querySelector('select[name="navegador"]').value;
     let pasos = document.querySelector('textarea[name="pasos"]');
     let esperado = document.getElementById("esperado").value;
     let actual = document.getElementById("actual").value;
-    let imagen = document.getElementById("preImagen");
 
-    
     let dataArea = pasos.value.trim();
     let lineas = dataArea.split('\n');
     
@@ -39,16 +38,24 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
           color: #2E282A;
           font-weight: bold;
           font-size: 1em;
+          padding-left: 25px;
         }
-        .values, ol{
-            color: #942911;
-            font-size: 0.9em;
-            font-weight: 500;
+        .values{
+          color: #942911;
+          font-size: 1em;
+          font-weight: 500;
+          padding-left: 26px;
+        }
+        ol, li{
+          color: #942911;
+          font-size: 1em;
+          font-weight: 500;
+          padding-left: 36px;
         }
       </style>
         </head>
         <body>
-          <h2>📝 Reporte de Bug:</h2>
+          <h2>📝 Reporte de Bug</h2>
           <p>Id:</p>
            <p class="values">${identificador}</p>
           <br>
@@ -58,27 +65,26 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
           <p>Tipo de Defecto:</p>
            <p class="values">${tipo}</p>
           <br>  
-          <p>Frecuencia:</p>
-           <p class="values">${frecuencia}</p>
+          <p>Frecuencia de Aparición:</p>
+          <p class="values">${frecuencia}</p>
           <br>
           <p>Prioridad:</p>
            <p class="values">${prioridad}</p>
           <br>
-          <p>Dispositivo:</p>
-           <p class="values">${dispositivo}</p>
+          <p>Dispositivo / Navegador:</p>
+           <p class="values">${dispositivo} - ${navegador}</p>
           <br>
           <p>Fecha:</p>
            <p class="values">${fecha}</p>
           <br> 
-          <p>Pasos de Ejecucion:</p>
-          <ol>${generarElementosListados(lineas)}</ol>
+          <p>Pasos de Ejecución:</p>
+           <ol>${generarElementosListados(lineas)}</ol>
           <br>
           <p>Resultado Esperado:</p>
            <p class="values">${esperado}</p>
           <br>
           <p>Resultado Actual:</p>
            <p class="values">${actual}</p>
-          
         </body>
       </html>
     `;

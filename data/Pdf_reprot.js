@@ -73,6 +73,7 @@ document.getElementById("reportBtnPdf").addEventListener("click", function(e) {
     doc.setFont("Helvetica", "bold");
     doc.text(esperado, 12, yPos + 10);
     doc.setTextColor(restartColor);
+
     doc.setFont("Helvetica", "bold");
     doc.text("Resultado Actual:", 10, yPos + 30);
     doc.setTextColor(ColorValues)
