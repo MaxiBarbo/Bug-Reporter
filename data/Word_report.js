@@ -1,5 +1,5 @@
 
-document.getElementById("myForm").addEventListener("submit", function(e) {
+document.getElementById("reportBtn").addEventListener("click", function(e) {
     e.preventDefault();
   
     let fecha = document.getElementById("fecha").value;
@@ -27,55 +27,60 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
           <style>
         body {
           font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-          background-color: #f2f2f2;
+          background-color: white;
           margin: 0;
           padding: 10px;
         }
         h2 {
           color: black;
+          text-align: center;
         }
         p {
-          color: #001F54;
+          color: #2E282A;
           font-weight: bold;
           font-size: 1em;
         }
-        span{
-            color: #2E282A;
+        .values, ol{
+            color: #942911;
             font-size: 0.9em;
-            font-weight: bold;
-        }
-        ol {
-          color: #2E282A;
-          font-size: 0.9em;
-          font-weight: bold;
+            font-weight: 500;
         }
       </style>
         </head>
         <body>
           <h2>📝 Reporte de Bug:</h2>
-          <p>Fecha:</p>
-           <span>${fecha}</span>
           <p>Id:</p>
-           <span>${identificador}</span>
+           <p class="values">${identificador}</p>
+          <br>
           <p>Titulo:</p>
-           <span>${titulo}</span>
+           <p class="values">${titulo}</p>
+          <br>
           <p>Tipo de Defecto:</p>
-           <span>${tipo}</span>
+           <p class="values">${tipo}</p>
+          <br>  
           <p>Frecuencia:</p>
-           <span>${frecuencia}</span>
+           <p class="values">${frecuencia}</p>
+          <br>
           <p>Prioridad:</p>
-           <span>${prioridad}</span>
+           <p class="values">${prioridad}</p>
+          <br>
           <p>Dispositivo:</p>
-           <span>${dispositivo}</span>
+           <p class="values">${dispositivo}</p>
+          <br>
+          <p>Fecha:</p>
+           <p class="values">${fecha}</p>
+          <br> 
           <p>Pasos de Ejecucion:</p>
           <ol>${generarElementosListados(lineas)}</ol>
+          <br>
           <p>Resultado Esperado:</p>
-           <span> ${esperado}</span>
+           <p class="values">${esperado}</p>
+          <br>
           <p>Resultado Actual:</p>
-           <span> ${actual}</span>
+           <p class="values">${actual}</p>
           
         </body>
-      </html>necesito un cof
+      </html>
     `;
     function generarElementosListados(elementos) {
         var listaHTML = '';
