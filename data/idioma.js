@@ -1,5 +1,6 @@
 // Variables globales para almacenar los valores iniciales y alternativos de las etiquetas
 let etiquetas = [
+    { id: 'textReport', inicial: 'Reporte de Bugs', alternativo: 'Bugs Report'},
     { id: 'labelTitulo', inicial: 'Título:', alternativo: 'Title:'},
     { id: 'labelDefecto', inicial: 'Tipo de Defecto:', alternativo: 'Defect Type:'},
     { id: 'labelFecha', inicial: 'Fecha:', alternativo: 'Date:'},
