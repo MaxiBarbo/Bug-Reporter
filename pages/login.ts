@@ -1,7 +1,5 @@
 import { expect, type Locator, type Page } from "@playwright/test";
-
 //     await expect(page.getByRole('listitem')).toHaveCount(5);
-
 
 export class LoginPage {
     //Variables
@@ -23,7 +21,9 @@ export class LoginPage {
     //methods
     async submitLogin(email: string, pass: string){
         await this.inputEmail.fill(email)
-        await this.inputPass.fill(pass) 
+        await this.inputPass.fill(pass)
+        console.log(email)
+        console.log(pass) 
     }
 
     async btnSesion(){
@@ -43,4 +43,6 @@ export class LoginPage {
         const valor = await text?.textContent()
         console.log(valor)
     }
+    
 }
+ 

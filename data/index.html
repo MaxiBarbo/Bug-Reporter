@@ -4,15 +4,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.debug.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Reporte de Bugs</title>
   </head>
   <body>
-    <h1>Reporte de Bugs</h1>
+    <header>
+        <h1>Reporte de Bugs</h1>
+        <button class="btn btn-outline-light" onclick="alternarTexto()">Ingles / Español</button>
+    </header>
     <form id="myForm">
 
     <div class="block">    
         <div class="back">  
-            <label for="name">ID:</label>
+            <label for="name">Id:</label>
         </div>   
         <did class="data1">
             <input type="text" id="identificador" name="name">
@@ -21,7 +25,7 @@
 
     <div class="block">    
         <div class="back">  
-            <label for="titulo">Titulo:</label>
+            <label id="labelTitulo" for="titulo">Título:</label>
         </div>   
         <did class="data1">
             <input type="text" id="titulo" name="titulo">
@@ -30,7 +34,7 @@
 
     <div class="block">    
         <div class="back">  
-            <label for="tipo">Tipo de Defecto:</label>
+            <label id="labelDefecto" for="tipo">Tipo de Defecto:</label>
         </div>   
         <did class="data1">
             <select name="tipo">
@@ -46,20 +50,21 @@
 
     <div class="block">    
         <div class="back">  
-            <label for="frecuencia">Frecuencia:</label>
+            <label id="labelFrecuencia" for="frecuencia">Frecuencia:</label>
         </div>   
         <did class="data1">
             <select name="frecuencia">
                 <option></option>
                 <option value="Siempre">Siempre</option>
                 <option value="A veces">A veces</option>
+                <option value="A veces">Solo una vez</option>
               </select>
         </did>
     </div>
 
     <div class="block">    
         <div class="back">  
-            <label for="prioridad">Prioridad:</label>
+            <label id="labelPrioridad" for="prioridad">Prioridad:</label>
         </div>   
         <did class="data1">
             <select name="prioridad">
@@ -73,7 +78,7 @@
 
     <div class="block">    
         <div class="back">  
-            <label for="dispositivo">Dispositivo / Navegador:</label>
+            <label id="labelDispositivo" for="dispositivo">Dispositivo / Navegador:</label>
         </div>   
         <did class="data1">
             <select name="dispositivo">
@@ -95,7 +100,7 @@
 
     <div class="block">    
         <div class="back">  
-            <label for="fecha">Fecha:</label>
+            <label id="labelFecha" for="fecha">Fecha:</label>
         </div>   
         <did class="data1">
             <input type="date" id="fecha" name="fecha">
@@ -103,37 +108,43 @@
     </div>
 
     <div class="divColumn"> 
-        <label class="label1" for="pasos">Pasos de Ejecucion:</label>
-        <textarea name="pasos" rows="10" cols="30" placeholder="1- Open URL: www.example.com" maxlength="200"></textarea>
+        <label id="labelPasos" class="label1" for="pasos">Pasos de Ejecución:</label>
+        <!-- <button id="prerequsito" type="button" class="btn btn-outline-light">Añadir Prerequisitos</button>
+        <section id="inputextra"></section> -->
+        <textarea name="pasos" rows="10" cols="30" 
+        placeholder="Pre-requisitos: agregar solo si existen. Ej: Iniciar sesion en el sistema | Tener productos en Cart de compras
+1- Open URL: www.example.com" maxlength="200"></textarea>
     </div>  
 
     <div class="divColumn"> 
-      <label class="label1" for="esperado">Resultado Esperado:</label>
+      <label id="labelEsperado" class="label1" for="esperado">Resultado Esperado:</label>
         <did class="data2">
             <input type="text" id="esperado" name="esperado">
         </did>
     </div> 
 
     <div class="divColumn"> 
-        <label class="label1" for="actual">Resultado Actual:</label>
+        <label id="labelActual" class="label1" for="actual">Resultado Actual:</label>
           <did class="data2">
             <input type="text" id="actual" name="actual">
           </did>
       </div> 
 
       <!-- <label for="fileUpload">Selecciona un archivo:</label>
-      <input type="file" id="imagen" accept="image/*">
+      <input type="file" id="filesInput" accept="image/*">
       <div id="mostrarImagen" stye="display:flex;"></div> -->
 
       <div class="btnGroup">
         <input id="reportBtn" class="btn btn-outline-primary" type="submit" value="WORD">
         <input id="reportBtnPdf" class="btn btn-outline-danger" type="submit" value="PDF">
       </div>
-      
+      <div class="btnGroup">
+        <button class="btn btn-outline-warning" id="limpiarBtn">Limpiar Reporte</button>
+      </div>
     </form>
   </body>
+  <script src="idioma.js"></script>
   <script src="Word_report.js"></script>
   <script src="Pdf_reprot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <!-- <script src="imagen.js"></script> -->
 </html>
