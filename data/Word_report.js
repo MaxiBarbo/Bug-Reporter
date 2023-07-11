@@ -22,6 +22,8 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
     
 
     const textosLabel = guardarTexto('label')
+    const textosH1 = guardarTexto('h1')
+    console.log(textosH1[0])
   
     // Crea el contenido del archivo de Word
     var content = `
@@ -58,7 +60,7 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
       </style>
         </head>
         <body>
-          <h2>📝 Reporte de Bug</h2>
+          <h2>📝 ${textosH1[0]}</h2>
           <p>${textosLabel[0]}</p>
            <p class="values">${identificador}</p>
           <br>
