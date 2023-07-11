@@ -11,10 +11,10 @@ body{
 }
 header{
     display: flex;
-    gap: 12rem;
+   
     align-items: center;
     height: 7rem;
-    width: 43rem;
+    width: 40rem;
     margin-bottom: 1rem; 
 
 }
@@ -22,6 +22,7 @@ header{
 h1{
     color: white;
     margin-bottom: 1rem;
+    width: 25rem;
 }
 
 .back{
@@ -93,6 +94,7 @@ textarea{
 .btnGroup2{
     flex-direction: row;
     width: 20rem;
+    align-content: center;
 }
 
 @media only screen and (max-width: 375px) {
