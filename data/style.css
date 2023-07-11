@@ -11,10 +11,10 @@ body{
 }
 header{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     text-align: center;
     align-items: center;
-    gap: 3rem;
+    width: 43rem;
     margin-bottom: 1rem; 
 
 }
