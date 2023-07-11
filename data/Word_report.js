@@ -14,10 +14,15 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
     let esperado = document.getElementById("esperado").value;
     let actual = document.getElementById("actual").value;
 
+    let esperadoCapitalizado = capitalizarPrimeraLetra(esperado)
+    let actualCapitalizado = capitalizarPrimeraLetra(actual)
+      
     let dataArea = pasos.value.trim();
     let lineas = dataArea.split('\n');
     
-    
+
+    const textosLabel = guardarTexto('label')
+  
     // Crea el contenido del archivo de Word
     var content = `
       <html>
@@ -28,66 +33,72 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
           font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
           background-color: white;
           margin: 0;
-          padding: 10px;
+          padding: 9px;
+          padding-left: 40px;
         }
         h2 {
-          color: black;
+          color: #9D8420;
           text-align: center;
         }
         p {
-          color: #2E282A;
+          color: #33312E;
           font-weight: bold;
-          font-size: 1em;
-          padding-left: 25px;
+          font-size: 0.9em;
         }
         .values{
           color: #942911;
-          font-size: 1em;
+          font-size: 0.8em;
           font-weight: 500;
-          padding-left: 26px;
         }
         ol, li{
           color: #942911;
-          font-size: 1em;
+          font-size: 0.8em;
           font-weight: 500;
-          padding-left: 36px;
         }
       </style>
         </head>
         <body>
           <h2>📝 Reporte de Bug</h2>
-          <p>Id:</p>
+          <p>${textosLabel[0]}</p>
            <p class="values">${identificador}</p>
           <br>
-          <p>Titulo:</p>
+          <p>${textosLabel[1]}</p>
            <p class="values">${titulo}</p>
           <br>
-          <p>Tipo de Defecto:</p>
+          <p>${textosLabel[2]}</p>
            <p class="values">${tipo}</p>
           <br>  
-          <p>Frecuencia de Aparición:</p>
+          <p>${textosLabel[3]}</p>
           <p class="values">${frecuencia}</p>
           <br>
-          <p>Prioridad:</p>
+          <p>${textosLabel[4]}</p>
            <p class="values">${prioridad}</p>
           <br>
-          <p>Dispositivo / Navegador:</p>
+          <p>${textosLabel[5]}</p>
            <p class="values">${dispositivo} - ${navegador}</p>
           <br>
-          <p>Fecha:</p>
+          <p>${textosLabel[6]}</p>
            <p class="values">${fecha}</p>
           <br> 
-          <p>Pasos de Ejecución:</p>
+          <p>${textosLabel[7]}</p>
            <ol>${generarElementosListados(lineas)}</ol>
           <br>
-          <p>Resultado Esperado:</p>
-           <p class="values">${esperado}</p>
+          <p>${textosLabel[8]}</p>
+           <p class="values">${esperadoCapitalizado}</p>
           <br>
-          <p>Resultado Actual:</p>
-           <p class="values">${actual}</p>
-        </body>
+          <p>${textosLabel[9]}</p>
+           <p class="values">${actualCapitalizado}</p>
+          </body>
+          <br><br><br><br><br><br><br>
+          <body>
+            <head>
+              <meta charset="UTF-8">
+            <head>
+            <p>Impresión de Pantalla / Videos:</p> 
+          <body/>
       </html>
     `;
+
     function generarElementosListados(elementos) {
         var listaHTML = '';
         for (var i = 0; i < elementos.length; i++) {
@@ -95,14 +106,33 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
         }
         return listaHTML;
       }
-        
-    // Crea un objeto Blob con el contenido y el tipo MIME
-    var blob = new Blob([content], { type: "application/msword" });
-  
-    // Crea un enlace para descargar el archivo de Word
-    var link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "Test_Report.doc";
-    link.click();
-  });
-  
+
+    var formulario = document.getElementById("myForm");
+    var limpiarBtn = document.getElementById("limpiarBtn");
+    limpiarBtn.addEventListener("click", function() {
+        formulario.reset();
+      });
+
+    function guardarTexto(etiqueta){
+        const elementos = document.querySelectorAll(etiqueta)
+        const datosTexto = []
+        elementos.forEach(e =>{
+          const texto = e.innerText;
+          datosTexto.push(texto)
+        })
+        return datosTexto
+      } 
+
+    function capitalizarPrimeraLetra(cadena) {
+        return cadena.charAt(0).toUpperCase() + cadena.slice(1);
+      }       
+   
+      // Crea un objeto Blob con el contenido y el tipo MIME
+      var blob = new Blob([content], { type: "application/msword" });
+    
+      // Crea un enlace para descargar el archivo de Word
+      var link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "Test_Report.doc";
+      link.click();
+});
