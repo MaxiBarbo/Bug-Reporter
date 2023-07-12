@@ -37,6 +37,15 @@
 
     <div class="block">    
         <div class="back">  
+            <label id="labelFecha" for="fecha">Fecha:</label>
+        </div>   
+        <did class="data1">
+            <input type="date" id="fecha" name="fecha">
+        </did>
+    </div>
+
+    <!-- <div class="block">    
+        <div class="back">  
             <label id="labelDefecto" for="tipo">Tipo de Defecto:</label>
         </div>   
         <did class="data1">
@@ -49,7 +58,7 @@
                 <option value="Visual">Visual</option>
               </select>
         </did>
-    </div>
+    </div> -->
 
     <div class="block">    
         <div class="back">  
@@ -63,7 +72,7 @@
                 <option value="A veces">Solo una vez</option>
               </select>
         </did>
-    </div>
+    </div> 
 
     <div class="block">    
         <div class="back">  
@@ -100,15 +109,26 @@
               </select>
         </did>
     </div>  
-
-    <div class="block">    
-        <div class="back">  
-            <label id="labelFecha" for="fecha">Fecha:</label>
-        </div>   
-        <did class="data1">
-            <input type="date" id="fecha" name="fecha">
-        </did>
-    </div>
+    
+    <div class="checks1">
+        <label id="labelDefecto" class="label1">Tipo de Defecto:</label>
+        <div class="radioGroup">
+            <div class="checkLabel">
+                <label>Contenido</label>
+                <label >Funcional</label>
+                <label >Crash</label>
+                <label >Performance</label>
+                <label >Visual</label>
+            </div>
+            <div class="checkRadio">
+                <input class="marginleft" type="radio" name="defecto" value="Contenido">
+                <input class="marginleft" type="radio" name="defecto" value="Funcional">
+                <input class="marginleft" type="radio" name="defecto" value="Crash">
+                <input class="marginleft" type="radio" name="defecto" value="Performance">
+                <input class="marginleft" type="radio" name="defecto" value="Visual">
+            </div>
+        </div>
+    </div>       
 
     <div class="divColumn"> 
         <label id="labelPasos" class="label1" for="pasos">Pasos de Ejecución:</label>
@@ -144,7 +164,7 @@
     </form>
   </body>
   <script src="idioma.js"></script>
-  <script src="Word_report.js"></script>
+  <script type="module" src="Word_report.js"></script>
   <script src="Pdf_reprot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

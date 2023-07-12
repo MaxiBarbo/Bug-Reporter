@@ -5,7 +5,7 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
     let fecha = document.getElementById("fecha").value;
     let identificador = document.getElementById("identificador").value;
     let titulo = document.getElementById("titulo").value;
-    let tipo = document.querySelector('select[name="tipo"]').value;
+    // let tipo = document.querySelector('select[name="tipo"]').value;
     let frecuencia = document.querySelector('select[name="frecuencia"]').value;
     let prioridad = document.querySelector('select[name="prioridad"]').value;
     let dispositivo = document.querySelector('select[name="dispositivo"]').value;
@@ -23,7 +23,11 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
 
     const textosLabel = guardarTexto('label')
     const textosH1 = guardarTexto('h1')
-    console.log(textosH1[0])
+    var tipo = obtenerPrioridadSeleccionada('defecto');
+
+    console.log(tipo);
+    console.log(textosLabel)
+   
   
     // Crea el contenido del archivo de Word
     var content = `
@@ -61,34 +65,34 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
         </head>
         <body>
           <h2>📝 ${textosH1[0]}</h2>
+          <p>${textosLabel[2]}</p>
+           <p class="values">${fecha}</p>
+          <br> 
           <p>${textosLabel[0]}</p>
            <p class="values">${identificador}</p>
           <br>
           <p>${textosLabel[1]}</p>
            <p class="values">${titulo}</p>
           <br>
-          <p>${textosLabel[2]}</p>
-           <p class="values">${tipo}</p>
-          <br>  
+          <p>${textosLabel[5]}</p>
+          <p class="values">${dispositivo} - ${navegador}</p>
+          <br> 
           <p>${textosLabel[3]}</p>
           <p class="values">${frecuencia}</p>
           <br>
           <p>${textosLabel[4]}</p>
            <p class="values">${prioridad}</p>
           <br>
-          <p>${textosLabel[5]}</p>
-           <p class="values">${dispositivo} - ${navegador}</p>
-          <br>
           <p>${textosLabel[6]}</p>
-           <p class="values">${fecha}</p>
+           <p class="values">${tipo}</p>
           <br> 
-          <p>${textosLabel[7]}</p>
+          <p>${textosLabel[12]}</p>
            <ol>${generarElementosListados(lineas)}</ol>
           <br>
-          <p>${textosLabel[8]}</p>
+          <p>${textosLabel[13]}</p>
            <p class="values">${esperadoCapitalizado}</p>
           <br>
-          <p>${textosLabel[9]}</p>
+          <p>${textosLabel[14]}</p>
            <p class="values">${actualCapitalizado}</p>
           </body>
           <br><br><br><br><br><br><br>
@@ -127,7 +131,21 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
 
     function capitalizarPrimeraLetra(cadena) {
         return cadena.charAt(0).toUpperCase() + cadena.slice(1);
-      }       
+      }  
+    
+    function obtenerPrioridadSeleccionada(etiqueta) {
+        var radios = document.getElementsByName(etiqueta);
+        var valorSeleccionado = null;
+        
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                valorSeleccionado = radios[i].value;
+                break;
+            }
+        }
+        
+        return valorSeleccionado;
+    }
    
       // Crea un objeto Blob con el contenido y el tipo MIME
       var blob = new Blob([content], { type: "application/msword" });
