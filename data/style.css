@@ -11,9 +11,8 @@ body{
 }
 header{
     display: flex;
-    gap: 12rem;
     align-items: center;
-    height: 7rem;
+    height: 5rem;
     width: 43rem;
     margin-bottom: 1rem; 
 
@@ -22,6 +21,7 @@ header{
 h1{
     color: white;
     margin-bottom: 1rem;
+    width: 25rem;
 }
 
 .back{
