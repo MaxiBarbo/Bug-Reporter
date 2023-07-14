@@ -36,7 +36,7 @@ h1{
 
 .data1{
     display: flex;
-    width: 25rem;
+    width: 50rem;
     height: 5rem;
     border: 2px solid black
 }
@@ -58,7 +58,7 @@ div{
 .divColumn{
     display: flex;
     flex-direction: column;
-    width: 44rem;
+    width: 50rem;
    
 }
 
@@ -75,19 +75,19 @@ label{
 }
 
 input{
-    width: 44rem;
+    width: 50rem;
 }
 
 select{
-    width: 44rem;
+    width: 50rem;
 }
 
 textarea{
-    width: 44rem;
+    width: 50rem;
 }
 
 .btnGroup{
-    width: 44rem;
+    width: 50rem;
     margin-top: 1rem;
 }
 .btnGroup2{
