@@ -18,55 +18,27 @@
     <form id="myForm">
 
     <div class="block1">    
-        <div class="label1">  
-            <label for="name">Id:</label>
-        </div>   
         <did class="data1">
-            <input type="text" id="identificador" name="name">
+            <input placeholder="ID" type="text" id="identificador" name="name">
         </did>
     </div>
 
     <div class="block1">    
-        <div class="label1">  
-            <label id="labelTitulo" for="titulo">Título:</label>
-        </div>   
         <did class="data1">
-            <input type="text" id="titulo" name="titulo">
+            <input placeholder="Titulo" type="text" id="titulo" name="titulo">
         </did>
     </div>
 
     <div class="block1">    
-        <div class="label1">  
-            <label id="labelFecha" for="fecha">Fecha:</label>
-        </div>   
         <did class="data1">
-            <input type="date" id="fecha" name="fecha">
+            <input placeholder="Fecha" type="date" id="fecha" name="fecha">
         </did>
     </div>
 
-    <!-- <div class="block">    
-        <div class="back">  
-            <label id="labelDefecto" for="tipo">Tipo de Defecto:</label>
-        </div>   
-        <did class="data1">
-            <select name="tipo">
-                <option></option>
-                <option value="Contenido">Contenido</option>
-                <option value="Crash">Crash</option>
-                <option value="Funcional">Funcional</option>
-                <option value="Performance">Performance</option>
-                <option value="Visual">Visual</option>
-              </select>
-        </did>
-    </div> -->
-
     <div class="block1">    
-        <div class="label1">  
-            <label id="labelFrecuencia" for="frecuencia">Frecuencia:</label>
-        </div>   
         <did class="data1">
             <select name="frecuencia">
-                <option></option>
+                <option id="frecuencia">Frecuencia</option>
                 <option value="Siempre">Siempre</option>
                 <option value="A veces">A veces</option>
                 <option value="A veces">Solo una vez</option>
@@ -75,33 +47,16 @@
     </div> 
 
     <div class="block1">    
-        <div class="label1">  
-            <label id="labelPrioridad" for="prioridad">Prioridad:</label>
-        </div>   
-        <did class="data1">
-            <select name="prioridad">
-                <option></option>
-                <option value="Baja">Baja</option>
-                <option value="Media">Media</option>
-                <option value="Alta">Alta</option>
-              </select>
-        </did>
-    </div>   
-
-    <div class="block1">    
-        <div class="label1">  
-            <label id="labelDispositivo" for="dispositivo">Dispositivo / Navegador:</label>
-        </div>   
         <did class="data1">
             <select name="dispositivo">
-                <option></option>
+                <option id="dispositivo">Dispositivo</option>
                 <option value="Windows 11">Windows 11</option>
                 <option value="Windows 10">Windows 10</option>
                 <option value="macOS">MacOs</option>
                 <option value="Ubuntu">Ubuntu</option>
               </select>
               <select name="navegador">
-                <option></option>
+                <option id="navegador">Navegador</option>
                 <option value="Chrome">Chrome</option>
                 <option value="Firefox">Firefox</option>
                 <option value="Opera">Opera</option>
@@ -109,9 +64,26 @@
               </select>
         </did>
     </div>  
+
+    <div class="checks1">
+        <label id="labelPrioridad" class="label1">Prioridad</label>
+        <div class="radioGroup">
+            <div class="checkRadio">
+                <input class="marginleft" type="radio" name="prioridad" value="Baja">
+                <input class="marginleft" type="radio" name="prioridad" value="Media">
+                <input class="marginleft" type="radio" name="prioridad" value="Alta">
+           
+            </div>
+            <div class="checkLabel marginleft">
+                <label>Baja</label>
+                <label >Media</label>
+                <label >Alta</label>
+            </div>
+        </div>
+    </div> 
     
     <div class="checks1">
-        <label id="labelDefecto" class="label1">Tipo de Defecto:</label>
+        <label id="labelDefecto" class="label1">Tipo de Defecto</label>
         <div class="radioGroup">
             <div class="checkRadio">
                 <input class="marginleft" type="radio" name="defecto" value="Contenido">
@@ -131,31 +103,23 @@
     </div>       
 
     <div class="divColumn"> 
-        <label id="labelPasos" class="label1" for="pasos">Pasos de Ejecución:</label>
-        <!-- <button id="prerequsito" type="button" class="btn btn-outline-light">Añadir Prerequisitos</button>
-        <section id="inputextra"></section> -->
+        <label id="labelPasos" class="label1" for="pasos">Pasos de Ejecución</label>
         <textarea name="pasos" rows="10" cols="30" 
         placeholder="Pre-requisitos: agregar solo si existen. Ej: Iniciar sesion en el sistema | Tener productos en Cart de compras
 1- Open URL: www.example.com" maxlength="200"></textarea>
     </div>  
 
     <div class="divColumn"> 
-      <label id="labelEsperado" class="label1" for="esperado">Resultado Esperado:</label>
         <did class="data2">
-            <input type="text" id="esperado" name="esperado">
+            <input id="esperado" placeholder="Resultado Esperado" type="text"  name="esperado">
         </did>
     </div> 
 
     <div class="divColumn"> 
-        <label id="labelActual" class="label1" for="actual">Resultado Actual:</label>
           <did class="data2">
-            <input type="text" id="actual" name="actual">
+            <input id="actual" placeholder="Resultado Actual" type="text" name="actual">
           </did>
       </div> 
-
-      <!-- <label for="fileUpload">Selecciona un archivo:</label>
-      <input type="file" id="filesInput" accept="image/*">
-      <div id="mostrarImagen" stye="display:flex;"></div> -->
 
       <div class="btnGroup">
         <input id="reportBtn" class="btn btn-outline-primary" type="submit" value="WORD">

@@ -40,7 +40,7 @@ h1{
     display: flex;
     width: 40rem;
     height: 5rem;
-    border: 2px solid black
+    
 }
 
 .data2{
@@ -60,13 +60,12 @@ div{
     display: flex;
     flex-direction: column;
     width: 44rem;
-   
 }
 
 label{
     font-weight: bold;
     color: whitesmoke;
-    letter-spacing: 1px;
+    letter-spacing: 4px;
     margin-left: 3px;
 }
 
@@ -76,14 +75,17 @@ label{
 
 input{
     width: 44rem;
+    border-radius: 1rem;
 }
 
 select{
     width: 44rem;
+    border-radius: 1rem;
 }
 
 textarea{
     width: 44rem;
+    border-radius: 1rem;
 }
 
 .btnGroup{

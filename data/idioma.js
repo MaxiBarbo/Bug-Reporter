@@ -1,15 +1,16 @@
 // Variables globales para almacenar los valores iniciales y alternativos de las etiquetas
 let etiquetas = [
     { id: 'textReport', inicial: 'Reporte de Bugs', alternativo: 'Bugs Report'},
-    { id: 'labelTitulo', inicial: 'Título:', alternativo: 'Title:'},
-    { id: 'labelDefecto', inicial: 'Tipo de Defecto:', alternativo: 'Defect Type:'},
-    { id: 'labelFecha', inicial: 'Fecha:', alternativo: 'Date:'},
-    { id: 'labelFrecuencia', inicial: 'Frecuencia:', alternativo: 'Frequency:'},
-    { id: 'labelPrioridad', inicial: 'Prioridad:', alternativo: 'Priority:'},
-    { id: 'labelDispositivo', inicial: 'Dispositivo / Navegador:', alternativo: 'Device / Browser:'},
-    { id: 'labelPasos', inicial: 'Pasos de Ejecución:', alternativo: 'Execution Steps:'},
-    { id: 'labelEsperado', inicial: 'Resultado Esperado:', alternativo: 'Expected result:'},
-    { id: 'labelActual', inicial: 'Resultado Actual:', alternativo: 'Current result:'},
+    { id: 'titulo', inicial: 'Título', alternativo: 'Title'},
+    { id: 'labelDefecto', inicial: 'Tipo de Defecto', alternativo: 'Defect Type'},
+    { id: 'fecha', inicial: 'Fecha', alternativo: 'Date'},
+    { id: 'frecuencia', inicial: 'Frecuencia', alternativo: 'Frequency'},
+    { id: 'labelPrioridad', inicial: 'Prioridad', alternativo: 'Priority'},
+    { id: 'dispositivo', inicial: 'Dispositivo', alternativo: 'Device'},
+    { id: 'navegador', inicial: 'Navegador', alternativo: 'Browser'},
+    { id: 'labelPasos', inicial: 'Pasos de Ejecución', alternativo: 'Execution Steps'},
+    { id: 'esperado', inicial: 'Resultado Esperado', alternativo: 'Expected result'},
+    { id: 'actual', inicial: 'Resultado Actual', alternativo: 'Current result'},
   ];
   
   function alternarTexto() {

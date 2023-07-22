@@ -7,7 +7,7 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
     let titulo = document.getElementById("titulo").value;
     // let tipo = document.querySelector('select[name="tipo"]').value;
     let frecuencia = document.querySelector('select[name="frecuencia"]').value;
-    let prioridad = document.querySelector('select[name="prioridad"]').value;
+    // let prioridad = document.querySelector('select[name="prioridad"]').value;
     let dispositivo = document.querySelector('select[name="dispositivo"]').value;
     let navegador = document.querySelector('select[name="navegador"]').value;
     let pasos = document.querySelector('textarea[name="pasos"]');
@@ -20,15 +20,19 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
     let dataArea = pasos.value.trim();
     let lineas = dataArea.split('\n');
     
-
     const textosLabel = guardarTexto('label')
+    const textosOptions = guardarTexto('option')
     const textosH1 = guardarTexto('h1')
     var tipo = obtenerPrioridadSeleccionada('defecto');
+    var prioridad = obtenerPrioridadSeleccionada('prioridad');
 
-    console.log(tipo);
-    console.log(textosLabel)
-   
-  
+    const inputId = getPlaceholderText('identificador')
+    const inputTitle = getPlaceholderText('titulo')
+    const inputFecha = getPlaceholderText('fecha')
+    const textoFrecuencia = getPlaceholderText('frecuencia')
+
+    console.log(inputFecha)
+
     // Crea el contenido del archivo de Word
     var content = `
       <html>
@@ -65,34 +69,34 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
         </head>
         <body>
           <h2>📝 ${textosH1[0]}</h2>
-          <p>${textosLabel[2]}</p>
+          <p>${inputFecha}</p>
            <p class="values">${fecha}</p>
           <br> 
-          <p>${textosLabel[0]}</p>
+          <p>${inputId}</p>
            <p class="values">${identificador}</p>
           <br>
-          <p>${textosLabel[1]}</p>
+          <p>${inputTitle}</p>
            <p class="values">${titulo}</p>
           <br>
-          <p>${textosLabel[5]}</p>
+          <p>${textosOptions[4]} / ${textosOptions[9]}</p>
           <p class="values">${dispositivo} - ${navegador}</p>
           <br> 
-          <p>${textosLabel[3]}</p>
+          <p>${textoFrecuencia}</p>
           <p class="values">${frecuencia}</p>
           <br>
-          <p>${textosLabel[4]}</p>
+          <p>${textosLabel[5]}</p>
            <p class="values">${prioridad}</p>
           <br>
-          <p>${textosLabel[6]}</p>
+          <p>${textosLabel[9]}</p>
            <p class="values">${tipo}</p>
           <br> 
-          <p>${textosLabel[12]}</p>
+          <p>${textosLabel[15]}</p>
            <ol>${generarElementosListados(lineas)}</ol>
           <br>
-          <p>${textosLabel[13]}</p>
+          <p>${textosLabel[16]}</p>
            <p class="values">${esperadoCapitalizado}</p>
           <br>
-          <p>${textosLabel[14]}</p>
+          <p>${textosLabel[17]}</p>
            <p class="values">${actualCapitalizado}</p>
           </body>
           <br><br><br><br><br><br><br>
@@ -146,6 +150,13 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
         
         return valorSeleccionado;
     }
+
+    function getPlaceholderText(id) {
+      const input = document.getElementById(id);
+      const placeholderText = input.getAttribute('placeholder');
+      return placeholderText;
+    }
+    
    
       // Crea un objeto Blob con el contenido y el tipo MIME
       var blob = new Blob([content], { type: "application/msword" });
