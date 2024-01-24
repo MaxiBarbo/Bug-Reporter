@@ -6,6 +6,7 @@ let etiquetas = [
     { id: 'labelFecha', inicial: 'Fecha:', alternativo: 'Date:'},
     { id: 'labelFrecuencia', inicial: 'Frecuencia:', alternativo: 'Frequency:'},
     { id: 'labelPrioridad', inicial: 'Prioridad:', alternativo: 'Priority:'},
+    { id: 'labelAsignacion', inicial: 'Asignado a:', alternativo: 'Assigned to:'},
     { id: 'labelDispositivo', inicial: 'Dispositivo / Navegador:', alternativo: 'Device / Browser:'},
     { id: 'labelPasos', inicial: 'Pasos de Ejecución:', alternativo: 'Execution Steps:'},
     { id: 'labelEsperado', inicial: 'Resultado Esperado:', alternativo: 'Expected result:'},
