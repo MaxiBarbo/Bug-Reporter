@@ -13,6 +13,7 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
     let pasos = document.querySelector('textarea[name="pasos"]');
     let esperado = document.getElementById("esperado").value;
     let actual = document.getElementById("actual").value;
+    let asigancion = document.querySelector('select[name="asignacion"]').value;
 
     let esperadoCapitalizado = capitalizarPrimeraLetra(esperado)
     let actualCapitalizado = capitalizarPrimeraLetra(actual)
@@ -20,19 +21,22 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
     let dataArea = pasos.value.trim();
     let lineas = dataArea.split('\n');
     
-
     const textosLabel = guardarTexto('label')
     const textosH1 = guardarTexto('h1')
-    console.log(textosH1[0])
+
+    console.log(textosLabel)
   
     // Crea el contenido del archivo de Word
     var content = `
       <html>
         <head>
           <meta charset="UTF-8">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
           <style>
         body {
-          font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+          font-family: 'DM Sans', sans-serif;
           background-color: white;
           margin: 0;
           padding: 9px;
@@ -48,12 +52,12 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
           font-size: 0.9em;
         }
         .values{
-          color: #942911;
+          color: #800000;
           font-size: 0.8em;
           font-weight: 500;
         }
         ol, li{
-          color: #942911;
+          color: #800000;
           font-size: 0.8em;
           font-weight: 500;
         }
@@ -68,35 +72,34 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
            <p class="values">${titulo}</p>
           <br>
           <p>${textosLabel[2]}</p>
+          <p class="values">${fecha}</p>
+          <br> 
+          <p>${textosLabel[3]}</p>
            <p class="values">${tipo}</p>
           <br>  
-          <p>${textosLabel[3]}</p>
+          <p>${textosLabel[4]}</p>
           <p class="values">${frecuencia}</p>
           <br>
-          <p>${textosLabel[4]}</p>
+          <p>${textosLabel[5]}</p>
            <p class="values">${prioridad}</p>
           <br>
-          <p>${textosLabel[5]}</p>
+          <p>${textosLabel[6]}</p>
+          <p class="values">${asigancion}</p>
+         <br>
+          <p>${textosLabel[7]}</p>
            <p class="values">${dispositivo} - ${navegador}</p>
           <br>
-          <p>${textosLabel[6]}</p>
-           <p class="values">${fecha}</p>
-          <br> 
-          <p>${textosLabel[7]}</p>
+          <p>${textosLabel[8]}</p>
            <ol>${generarElementosListados(lineas)}</ol>
           <br>
-          <p>${textosLabel[8]}</p>
+          <p>${textosLabel[9]}</p>
            <p class="values">${esperadoCapitalizado}</p>
           <br>
-          <p>${textosLabel[9]}</p>
+          <p>${textosLabel[10]}</p>
            <p class="values">${actualCapitalizado}</p>
           </body>
-          <br><br><br><br><br><br><br>
-          <body>
-            <head>
-              <meta charset="UTF-8">
-            <head>
-            <p>Impresión de Pantalla / Videos:</p> 
+          <br><br><br><br><br><br><br><br><br><br>
+            <p>Impresión de Pantalla / Videos:</p>
           <body/>
       </html>
     `;
@@ -113,7 +116,7 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
     var limpiarBtn = document.getElementById("limpiarBtn");
     limpiarBtn.addEventListener("click", function() {
         formulario.reset();
-      });
+    });
 
     function guardarTexto(etiqueta){
         const elementos = document.querySelectorAll(etiqueta)
@@ -127,7 +130,16 @@ document.getElementById("reportBtn").addEventListener("click", function(e) {
 
     function capitalizarPrimeraLetra(cadena) {
         return cadena.charAt(0).toUpperCase() + cadena.slice(1);
-      }       
+      }   
+
+      function getBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+    }  
    
       // Crea un objeto Blob con el contenido y el tipo MIME
       var blob = new Blob([content], { type: "application/msword" });

@@ -31,7 +31,7 @@ h1{
     align-items: center;
     justify-content: flex-start;
     border: 2px solid black;
-    
+    border-radius: 1rem;
 }
 
 .data1{
@@ -76,14 +76,17 @@ label{
 
 input{
     width: 50rem;
+    border-radius: 1rem;
 }
 
 select{
     width: 50rem;
+    border-radius: 1rem;
 }
 
 textarea{
     width: 50rem;
+    border-radius: 1rem;
 }
 
 .btnGroup{

@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.debug.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+
     <title>Reporte de Bugs</title>
   </head>
   <body>
@@ -32,6 +34,15 @@
         </div>   
         <did class="data1">
             <input type="text" id="titulo" name="titulo">
+        </did>
+    </div>
+
+    <div class="block">    
+        <div class="back">  
+            <label id="labelFecha" for="fecha">Fecha:</label>
+        </div>   
+        <did class="data1">
+            <input type="date" id="fecha" name="fecha">
         </did>
     </div>
 
@@ -81,6 +92,21 @@
 
     <div class="block">    
         <div class="back">  
+            <label id="labelAsignacion" for="asignacion">Asignado a:</label>
+        </div>   
+        <did class="data1">
+            <select name="asignacion">
+                <option></option>
+                <option value="Backend">Backend</option>
+                <option value="FrontEnd">FrontEnd</option>
+                <option value="Diseño">Diseño</option>
+                <option value="Testing">Testing</option>
+              </select>
+        </did>
+    </div>       
+
+    <div class="block">    
+        <div class="back">  
             <label id="labelDispositivo" for="dispositivo">Dispositivo / Navegador:</label>
         </div>   
         <did class="data1">
@@ -101,21 +127,12 @@
         </did>
     </div>  
 
-    <div class="block">    
-        <div class="back">  
-            <label id="labelFecha" for="fecha">Fecha:</label>
-        </div>   
-        <did class="data1">
-            <input type="date" id="fecha" name="fecha">
-        </did>
-    </div>
-
     <div class="divColumn"> 
         <label id="labelPasos" class="label1" for="pasos">Pasos de Ejecución:</label>
         <!-- <button id="prerequsito" type="button" class="btn btn-outline-light">Añadir Prerequisitos</button>
         <section id="inputextra"></section> -->
         <textarea name="pasos" rows="10" cols="30" 
-        placeholder="Pre-requisitos: agregar solo si existen. Ej: Iniciar sesion en el sistema | Tener productos en Cart de compras
+        placeholder=" Pre-requisitos: agregar solo si existen. Ej: Iniciar sesion en el sistema | Tener productos en Cart de compras
 1- Open URL: www.example.com" maxlength="2000"></textarea>
     </div>  
 
@@ -134,7 +151,7 @@
       </div> 
 
       <!-- <label for="fileUpload">Selecciona un archivo:</label>
-      <input type="file" id="filesInput" accept="image/*">
+      <input type="file" id="imageInput" accept="image/*" />
       <div id="mostrarImagen" stye="display:flex;"></div> -->
 
       <div class="btnGroup">
